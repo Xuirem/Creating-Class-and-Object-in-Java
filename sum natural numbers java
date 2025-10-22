@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class SumNaturalNumbers {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter a limit: ");
+        int limit = input.nextInt();
+
+        int sum = 0;
+        int i = 1;
+
+        while (i <= limit) {
+            sum += i;
+            i++;
+        }
+
+        System.out.println("The sum of natural numbers up to " + limit + " is: " + sum);
+
+        input.close();
+    }
+}
+
+
