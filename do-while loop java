@@ -1,21 +1,18 @@
 import java.util.Scanner;
 
-public class SumNaturalNumbers {
+public class PasswordCheck {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter a limit: ");
-        int limit = input.nextInt();
+        String correctPassword = "java123";
+        String enteredPassword;
 
-        int sum = 0;
-        int i = 1;
+        do {
+            System.out.print("Enter password: ");
+            enteredPassword = input.nextLine();
+        } while (!enteredPassword.equals(correctPassword));
 
-        while (i <= limit) {
-            sum += i;
-            i++;
-        }
-
-        System.out.println("The sum of natural numbers up to " + limit + " is: " + sum);
+        System.out.println("Access granted!");
 
         input.close();
     }
