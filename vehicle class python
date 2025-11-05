@@ -1,0 +1,16 @@
+class Vehicle:
+    def __init__(self, brand, fuel):
+        self.brand = brand
+        self.fuel = fuel
+
+class Car(Vehicle):
+    def __init__(self, brand, fuel, doors):
+        super().__init__(brand, fuel)
+        self.doors = doors
+
+    def drive(self):
+        self.fuel -= 1
+        return f"Driving {self.brand}, fuel left: {self.fuel}"
+
+car = Car("Toyota", 5, 4)
+print(car.drive())
