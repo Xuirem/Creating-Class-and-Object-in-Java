@@ -1,0 +1,26 @@
+interface Speaker {
+    void speak();
+}
+
+class Bird implements Speaker {
+    public void speak() {
+        System.out.println("Tweet!");
+    }
+}
+
+class Robot implements Speaker {
+    public void speak() {
+        System.out.println("Beep boop!");
+    }
+}
+
+public class Main6 {
+    static void makeItSpeak(Speaker s) {
+        s.speak();
+    }
+
+    public static void main(String[] args) {
+        makeItSpeak(new Bird());
+        makeItSpeak(new Robot());
+    }
+}
