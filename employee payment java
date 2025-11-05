@@ -1,0 +1,24 @@
+abstract class Employee {
+    abstract double calculatePay();
+}
+
+class HourlyEmployee extends Employee {
+    double calculatePay() {
+        return 20 * 8;
+    }
+}
+
+class SalariedEmployee extends Employee {
+    double calculatePay() {
+        return 5000;
+    }
+}
+
+public class Main8 {
+    public static void main(String[] args) {
+        Employee e1 = new HourlyEmployee();
+        Employee e2 = new SalariedEmployee();
+        System.out.println(e1.calculatePay());
+        System.out.println(e2.calculatePay());
+    }
+}
