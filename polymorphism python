@@ -1,0 +1,10 @@
+class InkPrinter:
+    def print_document(self):
+        print("Printing with ink...")
+
+class LaserPrinter:
+    def print_document(self):
+        print("Printing with laser...")
+
+for printer in [InkPrinter(), LaserPrinter()]:
+    printer.print_document()
