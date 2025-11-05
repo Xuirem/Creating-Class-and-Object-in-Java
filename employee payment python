@@ -1,0 +1,17 @@
+from abc import ABC, abstractmethod
+
+class Employee(ABC):
+    @abstractmethod
+    def calculate_pay(self):
+        pass
+
+class HourlyEmployee(Employee):
+    def calculate_pay(self):
+        return 20 * 8
+
+class SalariedEmployee(Employee):
+    def calculate_pay(self):
+        return 5000
+
+print(HourlyEmployee().calculate_pay())
+print(SalariedEmployee().calculate_pay())
