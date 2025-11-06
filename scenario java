@@ -1,0 +1,105 @@
+class Person {
+    protected String name;
+
+    void showInfo() {
+        System.out.println(name);
+    }
+}
+
+class Student extends Person {
+    Student() {
+        this.name = "name"; // default name for demo
+    }
+
+    @Override
+    void showInfo() {
+        System.out.println("I am " + name + ", a student.");
+    }
+
+    void sendMessage() {
+        System.out.println("Message sent to teacher.");
+    }
+
+    void sendMessage(String msg) {
+        System.out.println("Message sent to teacher: " + msg);
+    }
+}
+
+Instructions:
+Create a base class called Person
+Add a protected String name variable
+Add a void showInfo() method that prints the name.
+
+Scenario:
+You are creating a simple program for a SmartSchool System.
+ There are Students and Teachers, and each can send messages in their own way.
+ Inside the school, some information is protected and can only be seen by people inside the school (not outsiders).
+
+
+
+
+
+Create subclasses:
+Student (inherits Person)
+Teacher (inherits Person)
+
+Inside both subclasses:
+Override the showInfo() method:
+Student prints → “I am [name], a student.”
+Teacher prints → “I am [name], a teacher.”
+Add a new method named sendMessage() that prints something different for each one.
+
+Use Method Overloading
+In the Student class, create two versions of sendMessage():
+One with no parameter → prints “Message sent to teacher.”
+One with a String msg parameter → prints “Message sent to teacher: [msg]”
+
+
+In your Main class, do this:
+
+Person p1 = new Student();
+Person p2 = new Teacher();
+
+p1.showInfo();
+p2.showInfo();
+
+Student s1 = new Student();
+s1.sendMessage();
+s1.sendMessage("Can I submit my project tomorrow?");
+
+
+🧩 Expected Output:
+I am name, a student.
+I am Jazz, a teacher.
+Message sent to teacher.
+Message sent to teacher: Can I submit my project tomorrow?
+
+
+
+
+
+
+class Teacher extends Person {
+    Teacher() {
+        this.name = "Jazz"; // teacher's name
+    }
+
+    @Override
+    void showInfo() {
+        System.out.println("I am " + name + ", a teacher.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Person p1 = new Student();
+        Person p2 = new Teacher();
+
+        p1.showInfo();
+        p2.showInfo();
+
+        Student s1 = new Student();
+        s1.sendMessage();
+        s1.sendMessage("Can I submit my project tomorrow?");
+    }
+}
