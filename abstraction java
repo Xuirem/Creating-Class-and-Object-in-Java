@@ -3,18 +3,20 @@ abstract class Shape {
 }
 
 class Circle extends Shape {
+    @Override
     double area() {
         return 3.14 * 5 * 5;
     }
 }
 
 class Rectangle extends Shape {
+    @Override
     double area() {
         return 5 * 10;
     }
 }
 
-public class Main7 {
+public class Main {
     public static void main(String[] args) {
         Shape c = new Circle();
         Shape r = new Rectangle();
