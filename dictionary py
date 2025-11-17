@@ -1,0 +1,6 @@
+def create_dict():
+    return {"apple": 2, "banana": 5, "orange": 3}
+
+fruits = create_dict()
+print(fruits)
+print("Apple count:", fruits["apple"])
