@@ -1,0 +1,18 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main {
+    public static Map<String, Integer> createMap() {
+        Map<String, Integer> fruits = new HashMap<>();
+        fruits.put("apple", 2);
+        fruits.put("banana", 5);
+        fruits.put("orange", 3);
+        return fruits;
+    }
+
+    public static void main(String[] args) {
+        Map<String, Integer> fruits = createMap();
+        System.out.println(fruits);
+        System.out.println("Apple count: " + fruits.get("apple"));
+    }
+}
