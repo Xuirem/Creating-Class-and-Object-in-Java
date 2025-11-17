@@ -1,0 +1,61 @@
+abstract class Car {
+
+    String brand = "Toyota";
+    String model;
+    int year;
+    String color;
+    String fuelType;
+
+    abstract void startEngine();
+    abstract void stopEngine();
+
+    // Concrete method
+    void showBrand() {
+        System.out.println("Car Brand: " + brand);
+    }
+
+    void showDetails() {
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+        System.out.println("Color: " + color);
+        System.out.println("Fuel Type: " + fuelType);
+    }
+}
+
+class ToyotaVios extends Car {
+
+    ToyotaVios() {
+        model = "Vios";
+        year = 2024;
+        color = "White";
+        fuelType = "Gasoline";
+    }
+
+    @Override
+    void startEngine() {
+        System.out.println("Toyota Vios engine started using push button.");
+    }
+
+    @Override
+    void stopEngine() {
+        System.out.println("Toyota Vios engine stopped.");
+    }
+
+    void showModel() {
+        System.out.println("Specific Model: Toyota Vios 2024");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Car myCar = new ToyotaVios();   // Abstraction + Polymorphism
+
+        myCar.showBrand();
+        myCar.showDetails();
+        myCar.startEngine();
+        myCar.stopEngine();
+
+        ((ToyotaVios) myCar).showModel();
+    }
+}
