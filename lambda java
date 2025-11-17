@@ -1,0 +1,10 @@
+interface MathOperation {
+    int operation(int x);
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MathOperation square = x -> x * x;
+        System.out.println(square.operation(5));
+    }
+}
