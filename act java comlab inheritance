@@ -1,0 +1,39 @@
+Activity INHERITANCE:  
+Make a class and subclass.
+
+class Vehicle {
+    String brand;
+
+    void start() {
+        System.out.println("Vehicle is starting...");
+    }
+}
+
+class Car extends Vehicle {
+    String model;
+    String color;
+    String fuel;
+    String type;
+
+    void displayInfo() {
+        System.out.println("Brand: " + brand);
+        System.out.println("Model: " + model);
+        System.out.println("Color: " + color);
+        System.out.println("Fuel: " + fuel);
+        System.out.println("Type: " + type);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car();
+        myCar.brand = "Lamborghini";
+        myCar.model = "Miura";
+        myCar.color = "Red";
+        myCar.fuel = "Unleaded";
+        myCar.type = "Automatic";
+
+        myCar.start();
+        myCar.displayInfo();
+    }
+}
