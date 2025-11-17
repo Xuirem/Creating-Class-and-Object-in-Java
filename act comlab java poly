@@ -1,0 +1,58 @@
+
+
+// Parent class
+class Vehicle {
+
+    // Overloaded methods (Compile-Time Polymorphism)
+    void info() {
+        System.out.println("This is a vehicle");
+    }
+
+    void info(String brand) {
+        System.out.println("Brand: " + brand);
+    }
+
+    void info(String brand, int year) {
+        System.out.println("Brand: " + brand + ", Year: " + year);
+    }
+
+    // Method to be overridden
+    void speed() {
+        System.out.println("Vehicle has an average speed.");
+    }
+}
+
+class Car extends Vehicle {
+    @Override
+    void speed() {
+        System.out.println("Car runs at 150 km/h.");
+    }
+}
+
+class Motorcycle extends Vehicle {
+    @Override
+    void speed() {
+        System.out.println("Motorcycle runs at 180 km/h.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Vehicle v;
+
+        v = new Car();
+        v.info();
+        v.info("Lamborghini");
+        v.info("Lamborghini", 1963);
+        v.speed();
+
+        System.out.println();
+
+        v = new Motorcycle();
+        v.info();
+        v.info("Ducati");
+        v.info("Ducati", 2025);
+        v.speed();
+    }
+}
